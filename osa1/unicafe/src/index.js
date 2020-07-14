@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 
-const Statistics = (props) => {
-  if (props.good !== 0 || props.neutral !== 0 || props.bad !== 0) {
+const Statistics = ({good, neutral, bad}) => {
+  if (good !== 0 || neutral !== 0 || bad !== 0) {
     return(
-      <div>
-        <StatisticLine text="good" value={props.good}></StatisticLine>
-        <StatisticLine text="neutral" value={props.neutral}></StatisticLine> 
-        <StatisticLine text="bad" value={props.bad}></StatisticLine> 
-        <StatisticLine text="all" value={props.good + props.neutral + props.bad}></StatisticLine>        
-        <StatisticLine text="average" value={(props.good - props.bad) / (props.good + props.neutral + props.bad)}></StatisticLine>
-        <StatisticLine text="positive" value={(props.good / (props.good + props.neutral + props.bad) * 100)+"%"}></StatisticLine>
-      </div>
+      <table>
+        <StatisticLine text="good" value={good}/>
+        <StatisticLine text="neutral" value={neutral}/> 
+        <StatisticLine text="bad" value={bad}/>
+        <StatisticLine text="all" value={good + neutral + bad}/>       
+        <StatisticLine text="average" value={(good - bad) / (good + neutral + bad)}/>
+        <StatisticLine text="positive" value={(good / (good + neutral + bad) * 100)+" %"}/>
+      </table>
     )
   } else {
     return(
@@ -22,9 +22,10 @@ const Statistics = (props) => {
 
 const StatisticLine = (props) => {
   return(
-    <div>
-      <p>{props.text} {props.value}</p>
-    </div>
+    <tr>
+      <td>{props.text}</td>
+      <td>{props.value}</td>
+    </tr> 
   )
 }
 
@@ -48,7 +49,7 @@ const App = () => {
         bad
       </button>
       <h1>statistics</h1>
-      <Statistics good={good} neutral={neutral} bad={bad}></Statistics>
+      <Statistics good={good} neutral={neutral} bad={bad}/>
     </div>
   )
 }
