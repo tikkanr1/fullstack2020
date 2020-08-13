@@ -1,9 +1,9 @@
 import React from "react";
-  
+
   const Course = (props) => {
     return (
       <div>
-        {props.courses.map(course => 
+        {props.courses.map(course =>
             <ul key={course.id}>
                 <Header course={course.name}/>
                 <Content parts={course.parts}/>
@@ -12,7 +12,7 @@ import React from "react";
       </div>
     )
   }
-  
+
   const Header = (props) => {
     return (
       <div>
@@ -20,12 +20,12 @@ import React from "react";
       </div>
     )
   }
-  
+
   const Content = (props) => {
     console.log("content",props)
     return (
       <div>
-        {props.parts.map(part => 
+        {props.parts.map(part =>
           <li key={part.id}>
             <Part name={part.name} exercises={part.exercises}/>
           </li>
@@ -33,7 +33,7 @@ import React from "react";
       </div>
     )
   }
-  
+
   const Part = (props) => {
     return (
       <div>
@@ -41,12 +41,12 @@ import React from "react";
       </div>
     )
   }
-  
+
   const Total = (props) => {
     const sum = props.parts.reduce(
       (acc, cur) => acc + cur.exercises, 0
     )
-  
+
     return (
       <div>
         <p>total of {sum} exercises</p>
