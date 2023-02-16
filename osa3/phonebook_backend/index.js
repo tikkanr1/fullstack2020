@@ -2,7 +2,12 @@
 const express = require('express')
 const morgan = require('morgan')
 const app = express()
-const port = 3001
+const port = process.env.PORT || 3001
+const cors = require('cors')
+app.use(cors())
+app.use(express.static('build'))
+
+
 
 //define persons
 let persons = [
@@ -104,5 +109,5 @@ app.post("/api/persons", (request, response) => {
 
   
 
-//wait for input on port (3001)
+//wait for input on port
 app.listen(port, () => console.log(`Server listening on port ${port}.`))
