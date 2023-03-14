@@ -1,12 +1,13 @@
 const listHelper = require('../utils/list_helper')
 
+//dummy test
 test('dummy returns one', () => {
   const blogs = []
-
   const result = listHelper.dummy(blogs)
   expect(result).toBe(1)
 })
 
+//example blog
 const listWithOneBlog = [
   {
     _id: '5a422aa71b54a676234d17f8',
@@ -18,6 +19,7 @@ const listWithOneBlog = [
   },
 ]
 
+//example blogs
 const listWithMultipleBlogs = [
   {
     _id: "5a422b3a1b54a676234d17f9",
@@ -45,6 +47,7 @@ const listWithMultipleBlogs = [
   },
 ]
 
+//tests for favorite blog
 describe('favorite blog', () => {
   test('should return the single blog as favorite', () => {
     const expectedFavoriteBlog = listWithOneBlog[0]
@@ -65,6 +68,7 @@ describe('favorite blog', () => {
   })
 })
   
+//tets for total likes
 describe('total likes', () => {
   test('should return the total likes of a single blog', () => {
     const expectedTotalLikes = 5
@@ -85,6 +89,7 @@ describe('total likes', () => {
   })
 })
 
+//tests for most blogs
 describe('most blogs', () => {
   test('should return the author and the number of blogs for a single blog', () => {
     const expectedAuthorWithMostBlogs = {
@@ -111,6 +116,7 @@ describe('most blogs', () => {
   })
 })
 
+//tests for most likes
 describe('most likes', () => {
   test('should return null when given an empty list of blogs', () => {
   const expectedMostLikes = null

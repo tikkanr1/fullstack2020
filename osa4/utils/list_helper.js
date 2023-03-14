@@ -1,11 +1,13 @@
 const dummy = (_blogs) => 1
 
+//totallikes couter
 const totalLikes = (blogs) => {
   return blogs.reduce((sum, blog) => {
   return sum + blog.likes
   }, 0)
 }
 
+//favorite blog finder
 const favoriteBlog = (blogs) => {
   if (blogs.length === 0) {
     return null
@@ -20,6 +22,7 @@ const favoriteBlog = (blogs) => {
   })
 }
 
+//most blogs counter
 const mostBlogs = (blogs) => {
   if (!blogs.length) {
     return null
@@ -49,7 +52,7 @@ const mostBlogs = (blogs) => {
   }
 }
 
-
+//most likes counter
 const mostLikes = (blogs) => {
   if (!blogs.length) {
     return null

@@ -1,15 +1,13 @@
-@baseUrl = http://localhost:3001
-@basePath = api/blogs
 
-GET {{baseUrl}}/{{basePath}}
+GET http://localhost:3001/api/blogs
 
 ###
 
-POST {{baseUrl}}/{{basePath}}
+POST http://localhost:3001/api/blogs
 Content-Type: application/json
 
 {
+  "title": "Example title",
   "author": "Riku_Tikkanen",
-  "title": "Part 4",
-  "url": "https://fullstackopen.com/en/part4/structure_of_backend_application_introduction_to_testing"
+  "url": "https://test_url.com"
 }
