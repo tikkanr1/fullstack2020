@@ -70,6 +70,7 @@ describe('deleting a blog', () => {
   })
 })
 
+
 //tests for updating blogs
 describe('updating a blog', () => {
   test('should succeed with valid properties', async () => {
@@ -78,7 +79,7 @@ describe('updating a blog', () => {
       .put(`/api/blogs/${initialId}`)
       .send(helper.blogExampleNoId)
       .expect(200)
-    const blog = await Blog.findById(initialBlog.id)
+    const blog = await Blog.findById(initialId)
     for (const key of Object.keys(helper.blogExampleNoId))
       expect(blog[key]).toEqual(helper.blogExampleNoId[key])
   })
